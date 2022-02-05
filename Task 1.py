@@ -19,7 +19,7 @@ def denoise(img):
     denoise = cv2.medianBlur(img,3)
     return denoise
 #Use pytesseract library
-def text_extractor(img,og_image):
+def text_extractor(img):
     text = pytesseract.image_to_string(img)
     return text
 #main
@@ -40,7 +40,7 @@ def main(path):
     cv2.imshow("Final Image",fin_image)
     cv2.waitKey()
     cv2.destroyAllWindows()
-    text_in_image = text_extractor(fin_image,image)
+    text_in_image = text_extractor(fin_image)
     print(text_in_image)
 
 path = "Images\Screenshot 01.png"
